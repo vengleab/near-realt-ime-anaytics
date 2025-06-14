@@ -37,7 +37,7 @@ graph LR
 
 
     subgraph "Stream Processing"
-        RT[Real-time Analytics]
+        RT[Near-Real-time Analytics]
         style RT fill:#FFD93D,color:black
     end
 
@@ -82,7 +82,7 @@ graph LR
 ### Stream Processing Components
 - **Stream Consumer**: Python application that:
   - Consumes CDC events from Kafka
-  - Processes real-time data changes
+  - Processes near-real-time data changes
   - Maintains consumer group offset
 
 ## Prerequisites
@@ -271,29 +271,3 @@ pipenv run consumer
 - **Current Value Calculation**: Provides real-time sum of current product prices
 - **Error Handling**: Robust error handling and graceful shutdown
 - **Configurable**: Easy to modify for different topics or analysis requirements
-
-### Configuration
-
-The consumer uses the following configuration:
-- Kafka bootstrap server: `localhost:9093`
-- Consumer group: `debezium-consumer-group`
-- Auto offset reset: `earliest`
-- DuckDB connection for analytics
-- MinIO/S3 configuration for data access
-
-### Output Example
-
-The consumer provides formatted output showing:
-- Product ID and name
-- Current price
-- Valid from/to timestamps
-- Price change history
-- Current total product value
-
-
-## References
-
-1. [Debezium PostgreSQL Documentation](https://debezium.io/documentation/reference/2.1/connectors/postgresql.html)
-2. [Redpanda CDC Example](https://redpanda.com/blog/redpanda-debezium)
-3. [DuckDB Documentation](https://duckdb.org/docs/archive/0.2.9/)
-4. [Kafka Documentation](https://kafka.apache.org/20/documentation.html)
