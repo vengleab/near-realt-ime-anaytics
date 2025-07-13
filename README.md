@@ -153,7 +153,7 @@ The project mounts a local folder to the MinIO container, allowing direct access
 
 1. Start DuckDB:
 ```bash
-./duckdb
+./duckdb2
 ```
 
 2. Configure DuckDB for S3 access:
