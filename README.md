@@ -42,7 +42,7 @@ graph LR
     end
 
     %% Data Flow
-    PG -->|WAL| DBZ
+    PG -->|Dezebium Connector| DBZ
     DG -->|Generate Data| PG
     DBZ -->|CDC Events| KF
     KF -->|Stream| KFC
@@ -64,7 +64,7 @@ graph LR
 ```
 
 ### Source Layer
-- **PostgreSQL**: Source database with WAL (Write-Ahead Logging) enabled
+- **PostgreSQL**: Source database
 - **Data Generator**: Creates test data for demonstration
 
 ### CDC Pipeline
